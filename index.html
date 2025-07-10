@@ -1,139 +1,146 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>اختبار الصداقة</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="اختبار الصداقة - تحدى أصدقائك واعرف من يعرفك أكثر! لعبة تفاعلية ممتعة." />
+  <meta name="google-site-verification" content="YRqMgFGcUxicKtzz4MmVsAnKjVrVyCzKovWWLcIriq4" />
+  <title>اختبار الصداقة</title>
 
-<!-- رابط خط تجريدي (اختياري) -->
-<link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet" />
+  <!-- رابط خط تجريدي (اختياري) -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet" />
 
-<style>
-  body {
-    font-family: 'Tajawal', sans-serif;
-    background-color: #111;
-    color: #fff;
-    text-align: center;
-    margin: 0; padding: 0;
-  }
-  .container {
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
-    background: #1e1e1e;
-    margin-top: 50px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(255,255,255,0.1);
-  }
-  h1 { color: #bb86fc; }
-  #showResultsBtn {
-    background-color: #03dac6;
-    color: #000;
-    border-radius: 10px;
-    padding: 10px 20px;
-    margin-bottom: 15px;
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-  }
-  #showResultsBtn:hover {
-    background-color: #01bfa8;
-    color: #fff;
-  }
-  #question { font-size: 1.3em; margin-bottom: 20px; }
-  input[type="text"] {
-    padding: 10px;
-    width: 80%;
-    border-radius: 10px;
-    border: 1px solid #444;
-    background-color: #222;
-    color: #fff;
-    font-size: 16px;
-    margin-top: 10px;
-  }
-  button {
-    padding: 10px 20px;
-    margin-top: 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    background-color: #bb86fc;
-    color: #000;
-    border-radius: 10px;
-  }
-  button:hover {
-    background-color: #9c63e6;
-    color: #fff;
-  }
-  .answer-btn {
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-    width: 80%;
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #555;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  .answer-btn:hover {
-    background-color: #444;
-  }
-  .hidden { display: none; }
-  #share input {
-    width: 80%;
-    padding: 8px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #444;
-    background-color: #222;
-    color: #fff;
-  }
-  #share button {
-    padding: 10px 15px;
-    border-radius: 8px;
-    background-color: #03dac6;
-    color: #000;
-    border: none;
-    cursor: pointer;
-  }
-  #share button:hover { background-color: #01bfa8; }
-  #participants {
-    margin-top: 30px;
-    background-color: #222;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: right;
-  }
-  #participants h3 {
-    margin-bottom: 10px;
-    color: #03dac6;
-  }
-  #participantsList {
-    list-style: none;
-    padding: 0;
-    max-height: 150px;
-    overflow-y: auto;
-    text-align: right;
-  }
-  #participantsList li {
-    background-color: #333;
-    margin: 5px 0;
-    padding: 8px 12px;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: 600;
-  }
-  /* تنسيق إعلان جوجل */
-  .adsbygoogle {
-    display: block;
-    margin: 20px auto;
-  }
-</style>
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      margin: 0; padding: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      background: #1e1e1e;
+      margin-top: 50px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+    }
+    h1 { color: #bb86fc; }
+    #showResultsBtn {
+      background-color: #03dac6;
+      color: #000;
+      border-radius: 10px;
+      padding: 10px 20px;
+      margin-bottom: 15px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    #showResultsBtn:hover {
+      background-color: #01bfa8;
+      color: #fff;
+    }
+    #question { font-size: 1.3em; margin-bottom: 20px; }
+    input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      border-radius: 10px;
+      border: 1px solid #444;
+      background-color: #222;
+      color: #fff;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: #bb86fc;
+      color: #000;
+      border-radius: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    button:hover {
+      background-color: #9c63e6;
+      color: #fff;
+    }
+    .answer-btn {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 80%;
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .answer-btn:hover {
+      background-color: #444;
+    }
+    .hidden { display: none; }
+    #share input {
+      width: 80%;
+      padding: 8px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #444;
+      background-color: #222;
+      color: #fff;
+      user-select: all;
+    }
+    #share button {
+      padding: 10px 15px;
+      border-radius: 8px;
+      background-color: #03dac6;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    #share button:hover { background-color: #01bfa8; }
+    #participants {
+      margin-top: 30px;
+      background-color: #222;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: right;
+    }
+    #participants h3 {
+      margin-bottom: 10px;
+      color: #03dac6;
+    }
+    #participantsList {
+      list-style: none;
+      padding: 0;
+      max-height: 150px;
+      overflow-y: auto;
+      text-align: right;
+    }
+    #participantsList li {
+      background-color: #333;
+      margin: 5px 0;
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 600;
+    }
+    /* تنسيق إعلان جوجل */
+    .adsbygoogle {
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
 
-<!-- كود جوجل ادسنس الرسمي -->
-<script data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" async
-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- كود جوجل ادسنس الرسمي -->
+  <script data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 </head>
 <body>
@@ -143,7 +150,7 @@ src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     <div id="nameInputSection">
       <p>أدخل اسمك لتبدأ الاختبار:</p>
-      <input type="text" id="username" placeholder="اسمك هنا" />
+      <input type="text" id="username" placeholder="اسمك هنا" autocomplete="off" />
       <button id="startBtn">ابدأ الاختبار</button>
     </div>
 
@@ -300,10 +307,23 @@ function showAllResults(){
 
 function copyLink(){
   const shareLink=document.getElementById("shareLink");
-  shareLink.select();
-  shareLink.setSelectionRange(0,99999);
-  document.execCommand("copy");
-  alert("✅ تم نسخ الرابط! أرسله لأصدقائك 😄");
+  // تجربة Clipboard API مع fallback
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(shareLink.value).then(() => {
+      alert("✅ تم نسخ الرابط! أرسله لأصدقائك 😄");
+    }, () => {
+      fallbackCopy();
+    });
+  } else {
+    fallbackCopy();
+  }
+
+  function fallbackCopy(){
+    shareLink.select();
+    shareLink.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    alert("✅ تم نسخ الرابط! أرسله لأصدقائك 😄");
+  }
 }
 
 // ربط الأزرار بعد تحميل الصفحة
@@ -313,6 +333,5 @@ document.addEventListener("DOMContentLoaded",()=>{
   document.getElementById("copyBtn").addEventListener("click", copyLink);
 });
 </script>
-
 </body>
 </html>
