@@ -3,13 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="اختبار الصداقة - تحدى أصدقائك واعرف من يعرفك أكثر! لعبة تفاعلية ممتعة." />
-  <meta name="google-site-verification" content="YRqMgFGcUxicKtzz4MmVsAnKjVrVyCzKovWWLcIriq4" />
-  <title>اختبار الصداقة</title>
-
-  <!-- رابط خط تجريدي (اختياري) -->
+  <title>اختبار الصداقة مع إعلان جوجل</title>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet" />
-
   <style>
     body {
       font-family: 'Tajawal', sans-serif;
@@ -131,23 +126,22 @@
       color: #fff;
       font-weight: 600;
     }
-    /* تنسيق إعلان جوجل */
+    /* إعلان جوجل */
     .adsbygoogle {
       display: block;
       margin: 20px auto;
     }
   </style>
 
-  <!-- كود جوجل ادسنس الرسمي - تحميل السكريبت مرة وحدة فقط -->
+  <!-- كود إعلان جوجل -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4225211442266061"
-     crossorigin="anonymous"></script>
-
+    crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
     <h1>🌟 اختبار الصداقة 🌟</h1>
 
-    <!-- إعلان جوجل داخل الصفحة -->
+    <!-- إعلان جوجل -->
     <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-4225211442266061"
@@ -183,7 +177,6 @@
       <h3>👥 الأشخاص الذين شاركوا في الاختبار:</h3>
       <ul id="participantsList"></ul>
     </div>
-
   </div>
 
 <script>
@@ -312,7 +305,6 @@ function showAllResults(){
 
 function copyLink(){
   const shareLink=document.getElementById("shareLink");
-  // تجربة Clipboard API مع fallback
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(shareLink.value).then(() => {
       alert("✅ تم نسخ الرابط! أرسله لأصدقائك 😄");
@@ -322,7 +314,6 @@ function copyLink(){
   } else {
     fallbackCopy();
   }
-
   function fallbackCopy(){
     shareLink.select();
     shareLink.setSelectionRange(0, 99999);
@@ -331,12 +322,12 @@ function copyLink(){
   }
 }
 
-// ربط الأزرار بعد تحميل الصفحة
 document.addEventListener("DOMContentLoaded",()=>{
   document.getElementById("startBtn").addEventListener("click", startQuiz);
   document.getElementById("showResultsBtn").addEventListener("click", showAllResults);
   document.getElementById("copyBtn").addEventListener("click", copyLink);
 });
 </script>
+
 </body>
 </html>
